@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy | Same Table Press</title>
+<meta name="description" content="Privacy notice.">
+<link rel="canonical" href="https://sametablepress.com/privacy/">
+<meta property="og:title" content="Privacy | Same Table Press"><meta property="og:description" content="Privacy notice.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://sametablepress.com/privacy/">
+<link rel="stylesheet" href="/assets/style.css">
+</head><body>
+<header class="top"><div class="wrap"><a href="/">Same Table Press</a></div></header>
+
+<main><section><div class="wrap prose"><p class="cap">Privacy</p><h2>What we collect and why</h2>
+<p>This site collects only what you type into its forms: your email address and, where you are asked for it, a date you choose. We use them to send you the pages you asked for, to remind you on the date you entered, and, if you agreed, to send news about our journals a few times a year.</p>
+<p>We do not sell your data. Two providers process it for us: MailerLite (Lithuania) stores the subscriber list and sends the emails; Netlify (USA) hosts this site and, like any web host, records technical data such as your IP address in its server logs for a short time.</p>
+<p>We keep your email address until you unsubscribe or ask us to delete it. You can unsubscribe in any email. To see, correct, or delete what we hold about you, write to <a href="mailto:hello@sametablepress.com">hello@sametablepress.com</a>.</p>
+<p>The site does not use advertising trackers or analytics cookies. It stores one setting in your browser so that the subscription window is not shown to you twice. Fonts are served from this site.</p>
+<p>Same Table Press is the publishing name under which this site and its journals are published. Contact: <a href="mailto:hello@sametablepress.com">hello@sametablepress.com</a>.</p>
+<p class="fine">Last updated November 9, 2026.</p></div></section></main>
+
+<script>
+(function(){
+var URL='https://assets.mailerlite.com/jsonp/2780472/forms/203648704294421733/subscribe';
+fetch(URL.replace('/subscribe','/takel'),{mode:'no-cors'}).catch(function(){});
+document.querySelectorAll('form.ml').forEach(function(f){
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(f.querySelector('[name=bot-field]').value) return;
+  var btn=f.querySelector('button'), msg=f.querySelector('.msg');
+  var dt=f.querySelector('input[type=date]'); 
+  var fd=new FormData();
+  fd.append('fields[email]',f.querySelector('input[type=email]').value.trim());
+  if(dt && dt.value) fd.append('fields[open_date]',dt.value);
+  fd.append('ml-submit','1'); fd.append('anticsrf','true');
+  btn.disabled=true; msg.textContent='';
+  fetch(URL,{method:'POST',body:fd,mode:'no-cors'}).then(function(){
+    location.href=f.getAttribute('data-next');
+  }).catch(function(){
+    btn.disabled=false; msg.textContent='Something went wrong. Please try again, or write to hello@sametablepress.com.';
+  });
+ });
+});
+})();
+</script>
+<footer><div class="wrap"><div>© Same Table Press</div><div><a href="/privacy/">Privacy</a> · <a href="mailto:hello@sametablepress.com">hello@sametablepress.com</a></div></div></footer>
+</body></html>

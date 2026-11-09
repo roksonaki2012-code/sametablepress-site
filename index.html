@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Same Table Press: journals for the people at your table</title>
+<meta name="description" content="Guided journals for two people who sit at the same table and want to talk: couples, parents and children, sisters and brothers.">
+<link rel="canonical" href="https://sametablepress.com/">
+<meta property="og:title" content="Same Table Press: journals for the people at your table"><meta property="og:description" content="Guided journals for two people who sit at the same table and want to talk: couples, parents and children, sisters and brothers.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://sametablepress.com/">
+<link rel="stylesheet" href="/assets/style.css">
+</head><body>
+<header class="top"><div class="wrap"><a href="/">Same Table Press</a></div></header>
+<div class="hero"><div class="frame"><p class="tag">Journals for two</p><h1>Same Table Press</h1><p class="lead">For the people who sit at your table, and the conversations that bring them closer.</p><svg class="cups" viewBox="0 0 260 155" fill="none" stroke="#d9b98f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 101 Q130 98 248 101"/><path d="M42 101 L41 150"/><path d="M218 101 L219 150"/>
+<path d="M70 58 Q69 84 76 92 Q92 101 108 92 Q115 84 114 58 Z"/><path d="M114 66 q14 2 11 13 q-3 8 -12 8"/>
+<path d="M148 46 L150 92 Q151 97 168 97 Q185 97 186 92 L188 46 Z"/><path d="M148 58 q-12 3 -10 15 q2 8 11 9"/>
+<path d="M84 44 q8 -10 2 -20 q-5 -8 3 -16" stroke-width="1.5"/><path d="M99 46 q7 -9 1 -18" stroke-width="1.5"/>
+<path d="M165 36 q8 -11 1 -21 q-5 -8 4 -14" stroke-width="1.5"/></svg></div></div>
+<main><section><div class="wrap">
+<p class="cap">Journals</p><h2>Sit down. Write apart. Read each other.</h2>
+<a class="card" href="/tnn/"><img src="/assets/cover_tnn.png" alt="Cover of Then, Now, Next"><div><p class="cap">A journal for couples</p><h3>Then, Now, Next</h3><p style="margin:0 0 8px">Look back, see where you are, and dream forward together.</p><span class="go">Open →</span></div></a>
+<p class="fine" style="margin-top:22px">More journals for the people at your table are on the way: for parents and children, for sisters and brothers.</p></div></section>
+<section><div class="wrap"><p class="cap">Stay at the table</p><h2>Free pages and quiet news</h2>
+<p>New journals and free printable pages, a few times a year.</p><form class="ml" name="newsletter" data-next="/thanks/">
+<p class="hp"><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label for="e-newsletter">Your email</label><input type="email" id="e-newsletter" name="email" required autocomplete="email">
+<div class="consent"><input type="checkbox" id="c-newsletter" name="consent" value="yes" required><label for="c-newsletter" style="margin:0;font-size:14px">I agree to receive emails from Same Table Press. I can unsubscribe at any time. <a href="/privacy/">Privacy</a></label></div>
+<button type="submit">Subscribe</button> <span class="msg fine" role="alert"></span></form></div></section></main>
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="pop-t"><div class="box">
+<button class="x" type="button" aria-label="Close">×</button>
+<p class="cap">Stay at the table</p><h2 id="pop-t">Free printable pages</h2>
+<p style="margin:0 0 4px">Free pages for readers and quiet news from Same Table Press, a few times a year.</p>
+<form class="ml" name="popup-subscribe" data-next="/tnn/free/">
+<p class="hp"><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label for="e-popup-subscribe">Your email</label><input type="email" id="e-popup-subscribe" name="email" required autocomplete="email">
+<div class="consent"><input type="checkbox" id="c-popup-subscribe" name="consent" value="yes" required><label for="c-popup-subscribe" style="margin:0;font-size:14px">I agree to receive emails from Same Table Press. I can unsubscribe at any time. <a href="/privacy/">Privacy</a></label></div>
+<button type="submit">Send me the free pages</button> <span class="msg fine" role="alert"></span></form></div></div><script>
+(function(){
+var d=document.getElementById('pop'); if(!d) return;
+var KEY='stp_pop', shown=false;
+function seen(){try{return localStorage.getItem(KEY)==='1'}catch(e){return false}}
+function mark(){try{localStorage.setItem(KEY,'1')}catch(e){}}
+function open(){ if(shown||seen()) return; shown=true; d.classList.add('on'); var f=d.querySelector('input[type=email]'); if(f) f.focus(); }
+function close(){ d.classList.remove('on'); mark(); }
+d.addEventListener('click',function(e){ if(e.target===d) close(); });
+d.querySelector('.x').addEventListener('click',close);
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+d.querySelector('form').addEventListener('submit',mark);
+setTimeout(open,20000);
+document.addEventListener('mouseout',function(e){ if(!e.relatedTarget && e.clientY<=0 && performance.now()>8000) open(); });
+})();
+</script>
+<script>
+(function(){
+var URL='https://assets.mailerlite.com/jsonp/2780472/forms/203648704294421733/subscribe';
+fetch(URL.replace('/subscribe','/takel'),{mode:'no-cors'}).catch(function(){});
+document.querySelectorAll('form.ml').forEach(function(f){
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(f.querySelector('[name=bot-field]').value) return;
+  var btn=f.querySelector('button'), msg=f.querySelector('.msg');
+  var dt=f.querySelector('input[type=date]'); 
+  var fd=new FormData();
+  fd.append('fields[email]',f.querySelector('input[type=email]').value.trim());
+  if(dt && dt.value) fd.append('fields[open_date]',dt.value);
+  fd.append('ml-submit','1'); fd.append('anticsrf','true');
+  btn.disabled=true; msg.textContent='';
+  fetch(URL,{method:'POST',body:fd,mode:'no-cors'}).then(function(){
+    location.href=f.getAttribute('data-next');
+  }).catch(function(){
+    btn.disabled=false; msg.textContent='Something went wrong. Please try again, or write to hello@sametablepress.com.';
+  });
+ });
+});
+})();
+</script>
+<footer><div class="wrap"><div>© Same Table Press</div><div><a href="/privacy/">Privacy</a> · <a href="mailto:hello@sametablepress.com">hello@sametablepress.com</a></div></div></footer>
+</body></html>

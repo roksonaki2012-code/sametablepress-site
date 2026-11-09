@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your free pages | Same Table Press</title>
+<meta name="description" content="Free printable pages.">
+<link rel="canonical" href="https://sametablepress.com/tnn/free/">
+<meta property="og:title" content="Your free pages | Same Table Press"><meta property="og:description" content="Free printable pages.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://sametablepress.com/tnn/free/">
+<link rel="stylesheet" href="/assets/style.css">
+</head><body>
+<header class="top"><div class="wrap"><a href="/">Same Table Press</a></div></header>
+
+<main><section><div class="wrap"><p class="cap">Thank you</p><h2>Your free pages</h2>
+<p>Here they are. Print them at home on ordinary paper. Every new free page will come to your inbox.</p><div class="free"><h3>The letter sheet</h3><p>A printable sheet and an envelope template for the letters in session 26, for those who prefer not to cut a page out of the book. Leave your email and the date you plan to open the letters, and we will remind you.</p><p><a class="btn" href="/tnn/files/TNN_Letter_Sheet.pdf" download>Download the PDF</a></p></div><div class="free"><h3>Our Year: one evening</h3><p>A short evening for the two of you, in the spirit of the journal: each writes on their own about the past year, then you read each other.</p><p><a class="btn" href="/tnn/files/TNN_Our_Year_Evening.pdf" download>Download the PDF</a></p></div>
+<p class="fine">If you chose a date for your letters, we will write to you that day.</p></div></section></main>
+
+<script>
+(function(){
+var URL='https://assets.mailerlite.com/jsonp/2780472/forms/203648704294421733/subscribe';
+fetch(URL.replace('/subscribe','/takel'),{mode:'no-cors'}).catch(function(){});
+document.querySelectorAll('form.ml').forEach(function(f){
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(f.querySelector('[name=bot-field]').value) return;
+  var btn=f.querySelector('button'), msg=f.querySelector('.msg');
+  var dt=f.querySelector('input[type=date]'); 
+  var fd=new FormData();
+  fd.append('fields[email]',f.querySelector('input[type=email]').value.trim());
+  if(dt && dt.value) fd.append('fields[open_date]',dt.value);
+  fd.append('ml-submit','1'); fd.append('anticsrf','true');
+  btn.disabled=true; msg.textContent='';
+  fetch(URL,{method:'POST',body:fd,mode:'no-cors'}).then(function(){
+    location.href=f.getAttribute('data-next');
+  }).catch(function(){
+    btn.disabled=false; msg.textContent='Something went wrong. Please try again, or write to hello@sametablepress.com.';
+  });
+ });
+});
+})();
+</script>
+<footer><div class="wrap"><div>© Same Table Press</div><div><a href="/privacy/">Privacy</a> · <a href="mailto:hello@sametablepress.com">hello@sametablepress.com</a></div></div></footer>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank you | Same Table Press</title>
+<meta name="description" content="Thank you.">
+<link rel="canonical" href="https://sametablepress.com/thanks/">
+<meta property="og:title" content="Thank you | Same Table Press"><meta property="og:description" content="Thank you.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://sametablepress.com/thanks/">
+<link rel="stylesheet" href="/assets/style.css">
+</head><body>
+<header class="top"><div class="wrap"><a href="/">Same Table Press</a></div></header>
+
+<main><section><div class="wrap prose"><h2>Thank you</h2><p>You are on the list. Anything we promised you by email is on its way; check the spam folder if nothing arrives within a day.</p><p><a href="/">Back to the table</a></p></div></section></main>
+
+<script>
+(function(){
+var URL='https://assets.mailerlite.com/jsonp/2780472/forms/203648704294421733/subscribe';
+fetch(URL.replace('/subscribe','/takel'),{mode:'no-cors'}).catch(function(){});
+document.querySelectorAll('form.ml').forEach(function(f){
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(f.querySelector('[name=bot-field]').value) return;
+  var btn=f.querySelector('button'), msg=f.querySelector('.msg');
+  var dt=f.querySelector('input[type=date]'); 
+  var fd=new FormData();
+  fd.append('fields[email]',f.querySelector('input[type=email]').value.trim());
+  if(dt && dt.value) fd.append('fields[open_date]',dt.value);
+  fd.append('ml-submit','1'); fd.append('anticsrf','true');
+  btn.disabled=true; msg.textContent='';
+  fetch(URL,{method:'POST',body:fd,mode:'no-cors'}).then(function(){
+    location.href=f.getAttribute('data-next');
+  }).catch(function(){
+    btn.disabled=false; msg.textContent='Something went wrong. Please try again, or write to hello@sametablepress.com.';
+  });
+ });
+});
+})();
+</script>
+<footer><div class="wrap"><div>© Same Table Press</div><div><a href="/privacy/">Privacy</a> · <a href="mailto:hello@sametablepress.com">hello@sametablepress.com</a></div></div></footer>
+</body></html>
