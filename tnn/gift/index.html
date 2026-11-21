@@ -16,11 +16,13 @@
 .g .btn{margin:6px 0 10px}
 .g .steps{margin:30px 0 8px;text-align:left}
 .g .steps p{margin:0 0 12px}
+.g .topic{font-size:15px;letter-spacing:.02em;color:#7d3330;margin:0 0 10px;font-style:italic}
 </style>
 </head><body>
 <header class="top"><div class="wrap"><a href="/">Same Table Press</a></div></header>
 <main><div class="g">
 <img src="/assets/cover_tnn.png" alt="Cover of Then, Now, Next, a journal for couples">
+<p class="topic" id="topic" hidden></p>
 <h1>A quiet place for the two of you, right in the middle of a full and busy life.</h1>
 <p><i>Then, Now, Next</i> is a guided journal for couples. It asks for nothing but an evening and each other.</p>
 <p><a class="btn" href="https://www.amazon.com/dp/B0HR9FG8QD" target="_blank" rel="noopener">Buy on Amazon</a></p>
@@ -35,4 +37,15 @@
 <p><a href="/tnn/">Free printable pages for readers →</a></p>
 </div></main>
 <footer><div class="wrap"><div>© Same Table Press</div><div><a href="/privacy/">Privacy</a> · <a href="mailto:hello@sametablepress.com">hello@sametablepress.com</a></div></div></footer>
+<script>
+(function(){var t={
+"questions":"A question to ask your partner tonight.",
+"dates":"A date at home you can have 27 times.",
+"gifts-xmas":"A Christmas gift for the one who says they want nothing.",
+"gifts-ny":"A New Year gift for your partner: 27 evenings for the two of you.",
+"gifts-couple":"A gift for a couple that is for both of them.",
+"gifts-val":"A Valentine\u2019s gift that opens a year later."};
+try{var k=new URLSearchParams(location.search).get("p");var e=document.getElementById("topic");
+if(k&&t[k]){e.textContent=t[k];e.hidden=false;}}catch(x){}})();
+</script>
 </body></html>
